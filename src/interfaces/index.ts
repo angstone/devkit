@@ -1,3 +1,1 @@
-// import { IError } from './error.i'
-
-export { }
+export * from './tool';
