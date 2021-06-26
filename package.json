@@ -1,6 +1,6 @@
 {
   "name": "@angstone/devkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angstone Devkit",
   "main": "dist/index.js",
   "scripts": {
@@ -52,6 +52,7 @@
     "typescript": "^4.3.4"
   },
   "dependencies": {
-    "@angstone/cement-basic": "^2.0.2"
+    "@angstone/cement-basic": "^2.0.2",
+    "@angstone/insane": "^2.7.0"
   }
 }
