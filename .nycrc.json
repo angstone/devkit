@@ -3,5 +3,12 @@
   "reporter": ["lcov", "text"],
   "all": true,
   "check-coverage": true,
-  "exclude": ["wallaby.js", "dist", "coverage", "**/*.spec.ts", "**/constants"]
+  "exclude": [
+    "wallaby.js",
+    "dist",
+    "coverage",
+    "**/*.spec.ts",
+    "**/constants",
+    ".trash"
+  ]
 }

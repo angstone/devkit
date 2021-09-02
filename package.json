@@ -1,6 +1,6 @@
 {
   "name": "@angstone/devkit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angstone Devkit",
   "main": "dist/index.js",
   "scripts": {
@@ -25,7 +25,8 @@
   "license": "ISC",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@types/chai": "^4.2.19",
+    "@types/chai": "^4.2.21",
+    "@types/chai-like": "^1.1.1",
     "@types/chai-things": "0.0.34",
     "@types/chalk": "^2.2.0",
     "@types/mocha": "^8.2.2",
@@ -53,6 +54,10 @@
   },
   "dependencies": {
     "@angstone/cement-basic": "^2.0.2",
-    "@angstone/insane": "^2.7.0"
+    "@angstone/insane": "^2.7.0",
+    "country-currency": "^1.0.1",
+    "currency-symbol-map": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "iso-3166-1-codes": "^1.2.0"
   }
 }

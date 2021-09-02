@@ -14,5 +14,5 @@
     "types": ["node", "mocha", "chai", "sinon", "sinon-chai"]
   },
   "include": ["src/**/*.ts", "e2eSpecs/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".trash"]
 }
