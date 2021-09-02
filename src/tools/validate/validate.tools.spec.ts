@@ -207,7 +207,7 @@ describe('validateTools', () => {
       const result = {
         value: 3
       };
-      const isOnePlusTwo = (d: any) => {
+      const isOnePlusTwo = (d: unknown) => {
         console.log(d);
         if (d !== 1 + 2) {
           return 'is not one plus two';
@@ -220,7 +220,7 @@ describe('validateTools', () => {
       const result = {
         value: 4
       };
-      const isOnePlusTwo = (d: any) => {
+      const isOnePlusTwo = (d: unknown) => {
         console.log(d);
         if (d !== 1 + 2) {
           return 'is not one plus two';
@@ -417,14 +417,14 @@ describe('validateTools', () => {
   });
 
   describe('validate each', () => {
-    const isZero = (d: any) => {
+    const isZero = (d: unknown) => {
       if (d !== 0) {
         throw new Error('is not zero');
       }
       return true;
     };
 
-    const isZeroOrOne = (d: any) => {
+    const isZeroOrOne = (d: unknown) => {
       if (d !== 0 && d !== 1) {
         throw new Error('is nor zero neither one');
       }
