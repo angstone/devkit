@@ -1,19 +1,24 @@
 import {
+  IActivity,
   IMicroText,
+  isIActivity,
   isIMicroText,
   isISmallText,
   isISvgTextCode,
+  isIToolName,
   ISmallText,
   ISvgTextCode,
-  validate
-} from '../../..';
-import { isIToolName, IToolName } from './tool-name.i';
+  IToolName,
+  validate,
+  validateEach
+} from '../../../';
 
 export interface ITool {
   name: IToolName;
   icon: ISvgTextCode;
   bigName?: IMicroText;
   shortDescription: ISmallText;
+  activities: IActivity[];
 }
 
 export const isITool = (d: unknown): d is ITool =>
@@ -27,4 +32,5 @@ export const isITool = (d: unknown): d is ITool =>
     'string',
     undefined,
     isISmallText
-  );
+  ) &&
+  validateEach('activities', d, isIActivity, 'required');

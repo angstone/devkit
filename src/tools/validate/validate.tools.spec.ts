@@ -4,6 +4,7 @@
 /* tslint:disable:no-reference */
 /* tslint:disable:no-console */
 import { expect } from 'chai';
+import { AppError } from '../system/chunks/default-error';
 // import chalk from 'chalk'
 // import { spy } from 'sinon'
 
@@ -30,7 +31,9 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals('missing property "john"');
+        expect((err as AppError).message).to.be.equals(
+          'missing property "john"'
+        );
       }
 
       try {
@@ -38,7 +41,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "peter" must be one of those: "james".'
         );
       }
@@ -48,7 +51,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "peter" must be of type "number"'
         );
       }
@@ -74,7 +77,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "one" must be of type "string"'
         );
       }
@@ -84,7 +87,9 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals('missing property "two"');
+        expect((err as AppError).message).to.be.equals(
+          'missing property "two"'
+        );
       }
     });
   });
@@ -129,7 +134,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "peter" length must be less then "4"'
         );
       }
@@ -139,7 +144,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "peter" length must be greater then "2"'
         );
       }
@@ -185,7 +190,7 @@ describe('validateTools', () => {
         vt.validate('value', limitedOver, 'required', 'number', LIMITS);
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "value" must be less then "666"'
         );
       }
@@ -195,7 +200,7 @@ describe('validateTools', () => {
         expect(false).to.be.true;
       } catch (err) {
         console.log(err);
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'property "value" must be greater then "7"'
         );
       }
@@ -230,7 +235,7 @@ describe('validateTools', () => {
         vt.validate('value', result, 'required', 'number', {}, isOnePlusTwo);
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "value", is not one plus two'
         );
       }
@@ -295,7 +300,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "float1dec", data must have 0 decimals at maximum'
         );
       }
@@ -311,7 +316,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "float2dec", data must have 1 decimals at maximum'
         );
       }
@@ -327,7 +332,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "float9dec", data must have 8 decimals at maximum'
         );
       }
@@ -343,7 +348,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "float1dec", data must be integer'
         );
       }
@@ -359,7 +364,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "float2dec", data must be integer'
         );
       }
@@ -409,7 +414,7 @@ describe('validateTools', () => {
         );
         expect(false).to.be.true;
       } catch (err) {
-        expect(err.message).to.be.equals(
+        expect((err as AppError).message).to.be.equals(
           'on property "nonAllUpper", data must be uppercase'
         );
       }
@@ -450,7 +455,7 @@ describe('validateTools', () => {
         vt.validateEach('arrayOfZerosOneOne', data, isZero);
         expect(true).to.be.false;
       } catch (err) {
-        expect(err.message).to.be.equals('is not zero');
+        expect((err as AppError).message).to.be.equals('is not zero');
       }
     });
   });

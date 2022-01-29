@@ -9,12 +9,12 @@ import { validate } from '../../..';
  */
 export type IName = string;
 
-const LIMITS: any = {
-	name: {
-		max: 40,
-		min: 1,
-	},
+const LIMITS = {
+  name: {
+    max: 40,
+    min: 1
+  }
 };
 
-export const isIName = (d: any): d is IName =>
-	validate('name', { name: d }, 'required', 'string', LIMITS);
+export const isIName = (d: unknown): d is IName =>
+  validate('name', { name: d }, 'required', 'string', LIMITS);

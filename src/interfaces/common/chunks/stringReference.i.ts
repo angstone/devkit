@@ -9,18 +9,18 @@ import { validate } from '../../..';
  */
 export type IStringReference = string;
 
-const LIMITS: any = {
-	stringReference: {
-		max: 100,
-		min: 1,
-	},
+const LIMITS = {
+  stringReference: {
+    max: 100,
+    min: 1
+  }
 };
 
-export const isIStringReference = (d: any): d is IStringReference =>
-	validate(
-		'stringReference',
-		{ stringReference: d },
-		'required',
-		'string',
-		LIMITS,
-	);
+export const isIStringReference = (d: unknown): d is IStringReference =>
+  validate(
+    'stringReference',
+    { stringReference: d },
+    'required',
+    'string',
+    LIMITS
+  );
