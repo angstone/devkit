@@ -8,7 +8,7 @@ import {
 export interface IACDataListProperty {
   name: IStringReference;
   type: 'string' | 'number' | 'date' | 'enum';
-  types: string[];
+  types?: string[];
 }
 
 export const isIACDataListProperty = (d: unknown): d is IACDataListProperty =>

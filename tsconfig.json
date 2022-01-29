@@ -1,11 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "module": "commonjs",
     "baseUrl": ".",
     "outDir": "dist",
-    "lib": ["es2018", "dom"],
+    "lib": ["es2020", "dom"],
     "sourceMap": true,
     "declaration": true,
     "strict": true,
